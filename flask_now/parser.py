@@ -11,7 +11,7 @@ class Parser(object):
         self.__process_result = False
         self.__architecture = ""
         self.__package_list = []
-        self.__valid_packages = ["admin","ask","assets","autoindex","babel","bcrypt","cache","celery","classy","cors",
+        self.__valid_packages = ["admin","ask","assets","autoindex","babel", "bootstrap","bcrypt","cache","celery","classy","cors",
                                  "couchdb","couchdbkit","creole","dance","dashed","debugtoolbar","exceptional","filling",
                                  "flatpages","fluiddb","gae-mini-profiler","genshi","gravatar","heroku","htmlbuilder",
                                  "lesscss","lettuce","limiter","login","mail","mako","migrate","misaka","mongoalchemy",
@@ -38,13 +38,13 @@ class Parser(object):
             if len(self.__package_list) == 0 :
                 print("No extension will be added. Just creating a simple, extensionless flask app")
             else:
-                print("Creating simple app with following extensions: ", self.__package_list)
+                print("Creating simple app with following extensions: ", str(self.__package_list))
         elif self.__architecture != "":
             self.__process_result = True
             if len(self.__package_list) == 0:
                 print("Creating extensionless flask app with " + self.__architecture + " architecture pattern.")
             else:
-                print("Creating flask app with " + self.__architecture + " architecture pattern and with following extensions +" + self.__package_list)
+                print("Creating flask app with " + self.__architecture + " architecture pattern and with following extensions " + str(self.__package_list))
 
 
         for package in self.__package_list:

@@ -56,13 +56,15 @@ class Parser(object):
     def __create_requirements(self):
         try:
             with open("requirements.txt", "a") as file:
+                file.write("flask\n")
                 for package in self.__package_list:
                     if package == "frozen":
                         file.write("frozen-flask \n")
                     else:
                         file.write("flask-" + package + "\n")
+
+            self.__package_list.append("flask")
             self.__process_result = True
-            print(self.__package_list)
         except:
             self.__process_result = False
             raise ParserException("Cannot create or open: requirements.txt file")

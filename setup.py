@@ -7,7 +7,7 @@ def readme():
 
 
 setup(name='flask-now',
-      version='0.1.3',
+      version='0.1.4',
       description='Flask App Generator',
       long_description=readme(),
       classifiers=[
@@ -21,9 +21,7 @@ setup(name='flask-now',
       url='http://github.com/ozanonurtek/flask-now',
       author='Ozan Onur Tek',
       author_email='ozanonurtek@gmail.com',
-      install_requires=[
-          'flask'
-      ],
       packages=['flask_now'],
+      entry_points = {'console_scripts': ['flask-now = flask_now.now:main']},
       include_package_data=True,
       zip_safe=False)

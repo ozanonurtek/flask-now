@@ -26,6 +26,10 @@ Flask-Now supports two different patterns:
     run.py
     requirements.txt
     /project
+        __init__.py
+        controller.py
+        models.py
+        config.py
         /static
             /css
                 style.css
@@ -33,7 +37,6 @@ Flask-Now supports two different patterns:
                 script.js
         /templates
             index.html
-        config.py
 ```
 
 ### Supported Flask Extensions

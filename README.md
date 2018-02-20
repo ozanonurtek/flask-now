@@ -91,7 +91,7 @@ python3 build.py -mvc wtf bootstrap
 If you run the code above, Flask-Now will do the all job for you.
 
 
-- If you want to create a *simple structure* that I mentioned above, don't pass arguments to build.py. Example:
+- If you want to create a *simple structure* that I mentioned above, don't pass architecture pattern(```-mvc```) arguments to build.py. Example:
 ```
 python3 build.py wtf bootstrap
 ```

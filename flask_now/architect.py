@@ -13,9 +13,6 @@ class Architect(object):
         if self.__architecture.lower() == "mvc":
             self.__create_mvc_architecture()
 
-        elif self.__architecture.lower == "mvvmr":
-            pass
-            #self.__create_mvvmr_achitecture()
         else:
             self.__create_simple_app()
 

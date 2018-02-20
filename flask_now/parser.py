@@ -18,7 +18,7 @@ class Parser(object):
                                  "mongokit","oauth","openid","pewee","ponywhoosh","principal","pymongo","queryinspect",
                                  "raptor","rest-jsonapi","restful","restless","script","seasurf","security","shelve",
                                  "sijax","sqlalchemy","sse","static-compress","stormpath","testing","themes","uploads",
-                                 "user","via","weasyprint","webtest","wtf","xml-rpc","zen","zodb","frozen-flask"]
+                                 "user","via","weasyprint","webtest","wtf","xml-rpc","zen","zodb","frozen"]
 
     def __read_package_list(self):
         if len(sys.argv) > 0:
@@ -57,7 +57,7 @@ class Parser(object):
         try:
             with open("requirements.txt", "a") as file:
                 for package in self.__package_list:
-                    if package == "frozen-flask":
+                    if package == "frozen":
                         file.write("frozen-flask \n")
                     else:
                         file.write("flask-" + package + "\n")

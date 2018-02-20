@@ -114,13 +114,13 @@ And that's it. Your simple flask app is ready. Run it!
 ```
 python3 run.py
 ```
-This application initially have 3 configuration objects:
+This application initially have 3 configuration objects in ```config.py```:
 
-DEBUG=True
+```DEBUG=True```
 
-SECRET_KEY= It is generated automatically as suggested in(using ```os.urandom```) [Flask Quick Start](http://flask.pocoo.org/docs/0.12/quickstart/)
+```SECRET_KEY```= It is generated automatically as suggested in(using ```os.urandom()```) [Flask Quick Start](http://flask.pocoo.org/docs/0.12/quickstart/)
 
-SERVER_NAME="127.0.0.1:5000
+```SERVER_NAME="127.0.0.1:5000```
 
 ## TODO
 

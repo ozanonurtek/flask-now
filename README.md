@@ -39,7 +39,8 @@ Flask-Now supports two different patterns:
 ### Supported Flask Extensions
 You can auto-install following Flask Extensions while building your architecture:
 [List of Extensions](http://flask.pocoo.org/extensions/)
-In addition it supports:
+
+Also supports:
 - Flask-Bootstrap
 
 ## How to use

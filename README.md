@@ -59,6 +59,11 @@ Let me explain this project with an example. Assume that we want to create an Fl
 ### GNU/Linux - OSX
 
 #### Install
+- Install flask-now with pip, this will add an executable file to your /bin with the name flask-now which is out application:
+```
+pip install --user flask-now
+```
+#### Usage
 
 - Create a project folder:
 ```
@@ -72,36 +77,20 @@ virtualenv -p python3 venv
 ```
 source venv/bin/activate
 ```
-- Install flask-now with pip, this will also install flask(flask is requirement of flask-now):
+- **Important part starts**, we will run flask-now with command line arguments, let's assume that we need Flask-WTF and Flask-Bootstrap in MVC patern:
 ```
-pip install flask-now
-```
-
-#### Usage
-
-- Create a py file in flaskr's root directory and let's call it build.py
-```
-nano build.py
-```
-- Now insert following 2 lines of code into build.py file:
-```
-import flask_now
-flask_now.build()
-```
-- **Important part starts**, we will run this build.py with command line arguments, let's assume that we need Flask-WTF and Flask-Bootstrap in MVC patern:
-```
-python3 build.py -mvc wtf bootstrap
+flask-now -mvc wtf bootstrap
 ```
 If you run the code above, Flask-Now will do the all job for you.
 
 
-- If you want to create a *simple structure* that I mentioned above, don't pass architecture pattern(```-mvc```) arguments to build.py. Example:
+- If you want to create a *simple structure* that I mentioned above, don't pass architecture pattern(```-mvc```) arguments to flask-now. Example:
 ```
-python3 build.py wtf bootstrap
+flask-now wtf bootstrap
 ```
 - As you can understand from the example we drop Flask keyword while installing flask extensions to our project. For example:
 
-If we want to install *Flask-Admin*, **we just drop "Flask-" part at the beginning of the extension** and passing *admin* as an argument to build.py.
+If we want to install *Flask-Admin*, **we just drop "Flask-" part at the beginning of the extension** and passing *admin* as an argument to flask-now.
 
 Some examples which may confuse you:
 
@@ -109,7 +98,7 @@ Flask-Rest-Jsonapi -> rest-jsonapi
 
 Frozen-Flask -> frozen
 ```
-python3 build.py -mvc frozen rest-jsonapi wtf bootstrap admin
+flask-now -mvc frozen rest-jsonapi wtf bootstrap admin
 ```
 And that's it. Your simple flask app is ready. Run it!
 ```
@@ -121,8 +110,10 @@ This application initially have 3 configuration objects in ```config.py```:
 
 ```SECRET_KEY```= It is generated automatically as suggested in(using ```os.urandom()```) [Flask Quick Start](http://flask.pocoo.org/docs/0.12/quickstart/)
 
-```SERVER_NAME="127.0.0.1:5000```
-
+```SERVER_NAME="127.0.0.1:5000"```
+### Uninstall
+To uninstall :
+```pip uninstall flask-now```
 ## TODO
 
 - Adding more architectural patterns.

@@ -102,7 +102,14 @@ Frozen-Flask -> frozen
 ```
 python3 build.py -mvc frozen rest-jsonapi wtf bootstrap admin
 ```
-And that's it.
+And that's it. Your simple flask app is ready. Run it!
+```
+python3 run.py
+```
+This application initially have 3 configuration objects:
+DEBUG=True
+SECRET_KEY= It is generated automatically as suggested in(using ```os.urandom```) [Flask Quick Start](http://flask.pocoo.org/docs/0.12/quickstart/)
+SERVER_NAME="127.0.0.1:5000
 
 ## Contribution
 

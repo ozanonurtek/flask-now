@@ -100,7 +100,7 @@ python3 build.py wtf bootstrap
 ```
 - As you can understand from the example we drop Flask keyword while installing flask extensions to our project. For example:
 
-If we want to install *Flask-Admin*, **we just drop Flask keyword at the beginning of the extension** and passing *admin* as an argument to build.py.
+If we want to install *Flask-Admin*, **we just drop "Flask-" part at the beginning of the extension** and passing *admin* as an argument to build.py.
 
 Some examples which may confuse you:
 

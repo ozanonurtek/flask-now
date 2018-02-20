@@ -51,7 +51,7 @@ In addition it supports:
 
 Let me explain this project with an example. Assume that we want to create an Flask Application called ```flaskr```
 
-### GNU/Linux - osX
+### GNU/Linux - OSX
 
 #### Install
 
@@ -114,6 +114,9 @@ SERVER_NAME="127.0.0.1:5000
 ## Contribution
 
 Please feel free to contribute to this project, open issues, fork it, send pull requests.
+
 If your flask extension does not included in this software please feel free to send me an email.
+
 You can also send email to my mail adress.__ozanonurtek@gmail.com__
 
+Happy coding :metal:

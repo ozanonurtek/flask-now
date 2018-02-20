@@ -122,6 +122,12 @@ SECRET_KEY= It is generated automatically as suggested in(using ```os.urandom```
 
 SERVER_NAME="127.0.0.1:5000
 
+## TODO
+
+- Adding more architectural patterns.
+- Adding more options for configuration file.
+- Adding smart code generation according to desired extensions.(for example if you install Flask-SqlAlchemy, sample model, imports and db configurations will be ready)
+
 ## Contribution
 
 Please feel free to contribute to this project, open issues, fork it, send pull requests.

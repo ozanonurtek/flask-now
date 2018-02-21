@@ -146,7 +146,7 @@ man_pages = [
 
 
 html_theme_options = {
-    'index_logo': 'logo.png'
+    'index_logo': 'flask-now-small.png'
 }
 html_sidebars = {
     'index': ['sidebarlogo.html', 'sidebarintro.html']

@@ -1,4 +1,3 @@
-Flask Now
---------
+Flask-Now
 
-A simple Flask Application Generator via CLI. Check Github repository for more information.
+Flask-Now is a Flask Application Generator/Build-Tool runs via CLI. Check github page of the project for more information!

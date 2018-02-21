@@ -104,3 +104,14 @@ ENV/
 # mypy
 .mypy_cache/
 .idead
+
+*.egg-info
+dist/
+build/
+docs/_build
+.tox/
+.idea/
+.cache/
+htmlcov
+.coverage
+.coverage.*

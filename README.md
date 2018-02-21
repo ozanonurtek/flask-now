@@ -4,8 +4,8 @@
 
 <p align="center">Flask-Now is a Flask Application Generator/Build-Tool runs via CLI</p> 
 
-Check The Docs: [![Documentation Status](https://readthedocs.org/projects/flask-now/badge/?version=latest)](http://flask-now.readthedocs.io/en/latest/?badge=latest)
-
+[![Documentation Status](https://readthedocs.org/projects/flask-now/badge/?version=latest)](http://flask-now.readthedocs.io/en/latest/?badge=latest)
+[![Code Climate](https://codeclimate.com/github/ozanonurtek/flask-now/badges/gpa.svg)](https://codeclimate.com/github/ozanonurtek/flask-now)
 ## What is Flask-Now
 Since Flask is commonly used in kickstarting a project, developers shouldn't waste their time with creating folders like static/css, static/js, configuration, controllers, models etc. Aim of Flask-Now is __*auto generating necessity folders and files according to your architectural pattern and semi-automatically installing desired [flask extensions](http://flask.pocoo.org/extensions/)*__. Since Flask is very flexible microframework, it may fit many architectural pattern. Currently following patterns can be auto generated using Flask-Now:
 

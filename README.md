@@ -22,11 +22,12 @@ Flask-Now supports two different patterns:
     venv
     run.py
     config.py
+    models.py
     requirements.txt
 ```
 
-#### mvc
-- As suggested in [official tutorial](http://flask.pocoo.org/docs/0.12/tutorial/folders/), Flask Now has a similar folder structure which is called as MVC:
+#### bp (Known as blueprints)
+- As suggested in [official tutorial](https://flask.palletsprojects.com/en/1.1.x/blueprints/), Flask Now has a similar folder structure which is called as bp:
 ```
 
 /your_project_folder
@@ -35,7 +36,11 @@ Flask-Now supports two different patterns:
     requirements.txt
     /project
         __init__.py
-        controller.py
+        /blueprints
+            /index -> an example blueprint
+                __init__.py
+                controller.py
+                forms.py  
         models.py
         config.py
         /static
@@ -66,61 +71,34 @@ Let me explain this project with an example. Assume that we want to create an Fl
 ### GNU/Linux - OSX
 
 #### Install
-- Install flask-now with pip, this will add an executable file to your /bin with the name flask-now which is out application:
+- Install flask-now with pip to your global environment, this will add an executable file to your /bin with the name flask-now which is the runnable application:
 ```
-pip install --user flask-now
+sudo pip3 install flask-now
 ```
 #### Usage
+- Go to the folder you wish to create the project:
+```
+cd my_development_folder
+```
+- Create the app! Let's assume that we want to create an app named 'flaskr' with simple pattern with flask-wtf and flask-sqlalchemy installed
 
-- Create a project folder:
 ```
-mkdir flaskr && cd flaskr
-```
-- Setup a virtualenvironment:
-```
-virtualenv -p python3 venv
-```
-- Activate it:
-```
-source venv/bin/activate
-```
-- **Important part starts**, we will run flask-now with command line arguments, let's assume that we need Flask-WTF and Flask-Bootstrap in MVC patern:
-```
-flask-now -mvc wtf bootstrap
-```
-If you run the code above, Flask-Now will do the all job for you.
+flask-now flaskr simple -e sqlalchemy wtf
 
-
-- If you want to create a *simple structure* that I mentioned above, don't pass architecture pattern(```-mvc```) arguments to flask-now. Example:
 ```
-flask-now wtf bootstrap
+- That's it. Now activate the virtualenv and run the project:
 ```
-- As you can understand from the example we drop Flask keyword while installing flask extensions to our project. For example:
-
-If we want to install *Flask-Admin*, **we just drop "Flask-" part at the beginning of the extension** and passing *admin* as an argument to flask-now.
-
-Some examples which may confuse you:
-
-Flask-Rest-Jsonapi -> rest-jsonapi
-
-Frozen-Flask -> frozen
+cd flaskr && sourve/venv/bin/activate && python run.py
 ```
-flask-now -mvc frozen rest-jsonapi wtf bootstrap admin
-```
-And that's it. Your simple flask app is ready. Run it!
-```
-python3 run.py
-```
-This application initially have 3 configuration objects in ```config.py```:
+- As you can understand from the example we drop Flask keyword while installing flask extensions to our project.
 
-```DEBUG=True```
+- Some examples which may confuse you:
+  - Flask-Rest-Jsonapi -> rest-jsonapi
+  - Frozen-Flask -> frozen
 
-```SECRET_KEY```= It is generated automatically as suggested in(using ```os.urandom()```) [Flask Quick Start](http://flask.pocoo.org/docs/0.12/quickstart/)
-
-```SERVER_NAME="127.0.0.1:5000"```
 ### Uninstall
 To uninstall :
-```pip uninstall flask-now```
+```sudo pip3 uninstall flask-now```
 ## TODO
 
 - Adding more architectural patterns.
@@ -130,8 +108,6 @@ To uninstall :
 ## Contribution
 
 Please feel free to contribute to this project, open issues, fork it, send pull requests.
-
-If your flask extension does not included in this software please feel free to send me an email.
 
 You can also send email to my mail adress.__ozanonurtek@gmail.com__
 

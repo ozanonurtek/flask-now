@@ -1,9 +1,6 @@
 <p align="center"> 
 <img src="../master/images/logo.png">
 </p>
-<p align="center"> 
-<img src="../master/images/flask-now.gif">
-</p>
 
 <p align="center">Flask-Now is a Flask Application Generator/Build-Tool runs via CLI</p> 
 

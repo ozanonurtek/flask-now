@@ -76,7 +76,7 @@ flask-now flaskr simple -e sqlalchemy wtf
 ```
 - That's it. Now activate the virtualenv and run the project:
 ```
-cd flaskr && sourve/venv/bin/activate && python run.py
+cd flaskr && source/venv/bin/activate && python run.py
 ```
 - As you can understand from the example we drop Flask keyword while installing flask extensions to our project.
 

@@ -47,13 +47,6 @@ Flask-Now supports two different patterns:
             index.html
 ```
 
-### Supported Flask Extensions
-You can auto-install following Flask Extensions while building your architecture:
-[List of Extensions](http://flask.pocoo.org/extensions/)
-
-Also supports:
-- Flask-Bootstrap
-
 ## How to use
 
 #### Requirements

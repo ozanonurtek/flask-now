@@ -16,19 +16,24 @@ def main():
     args = parser.parse_args()
     global_python = args.python
     if args.python == 'python3':
-        result, code = subprocess.call(['which', 'python3'])
+        process = subprocess.Popen(['which', 'python3'], stdin=subprocess.PIPE, stdout=subprocess.PIPE,
+                                   stderr=subprocess.PIPE)
+        out, err = process.communicate()
+        code = process.returncode
         if code == 0:
-            global_python = result
+            global_python = out.decode("utf-8")
+            global_python = global_python.replace('\n', ' ')
         else:
-            raise Exception('No python path supplied')
+            raise Exception('No python path supplied: {}'.format(err))
 
     create_example_app(args.name, args.type)
     create_venv(global_python)
     create_requirements(args.extensions)
-    install_extensions(args.venv_name)
+    install_extensions()
 
 
 def create_venv(global_python_path):
+    print('{} -m venv venv'.format(global_python_path))
     process = subprocess.Popen('{} -m venv venv'.format(global_python_path), shell=True, stdout=subprocess.PIPE)
     print('Creating virtualenvironment')
     process.wait()
@@ -70,12 +75,12 @@ def create_requirements(extensions):
         print(ex)
 
 
-def install_extensions(venv_name):
+def install_extensions():
     print('Intalling extensions...')
-    process = subprocess.Popen('{}/bin/pip install -r requirements.txt'.format(venv_name), shell=True,
+    process = subprocess.Popen('venv/bin/pip install -r requirements.txt', shell=True,
                                stdout=subprocess.PIPE)
     while process.poll() is None:
-        print(process.stdout.readline())
+        print(process.stdout.readline().decode('utf-8'))
         time.sleep(0.1)
     process.wait()
     if process.returncode == 0:
@@ -83,7 +88,7 @@ def install_extensions(venv_name):
     else:
         print('Could not install extensions: {}'.format(process.stdout))
 
-    process = subprocess.Popen('{}/bin/pip freeze > requirements.txt'.format(venv_name), shell=True,
+    process = subprocess.Popen('venv/bin/pip freeze > requirements.txt', shell=True,
                                stdout=subprocess.PIPE)
     print('Freezing requirements...')
     process.wait()

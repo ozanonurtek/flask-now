@@ -12,25 +12,12 @@ def main():
     parser.add_argument('name', help='Name of your project', type=str)
     parser.add_argument('type', help='Type of project: Either Simple or Blueprints: (simple or bp)', type=str)
     parser.add_argument('-e', '--extensions', help='list of extensions', nargs='+')
-    parser.add_argument('-p', '--python', help='Global python3 path', default='python3')
+    parser.add_argument('-p', '--python', help='Global python3 path', default=sys.executable)
 
     args = parser.parse_args()
-    global_python = args.python
-    if args.python == 'python3' and os.name != 'nt':
-        process = subprocess.Popen(['which', 'python3'], stdin=subprocess.PIPE, stdout=subprocess.PIPE,
-                                   stderr=subprocess.PIPE)
-        out, err = process.communicate()
-        code = process.returncode
-        if code == 0:
-            global_python = out.decode("utf-8")
-            global_python = global_python.replace('\n', ' ')
-        else:
-            raise Exception('No python path supplied: {}'.format(err))
-    elif args.python == 'python3' and os.name == 'nt':
-        global_python = sys.executable
 
     create_example_app(args.name, args.type)
-    create_venv(global_python)
+    create_venv(args.python)
     create_requirements(args.extensions)
     install_extensions()
 

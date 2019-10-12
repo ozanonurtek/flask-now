@@ -10,7 +10,7 @@ import pkg_resources
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('name', help='Name of your project', type=str)
-    parser.add_argument('type', help='Type of project: Either Simple or Blueprints: (simple or bp)', type=str)
+    parser.add_argument('--type', help='Type of project: Either Simple or Blueprints: (simple or bp), simple is by default selected',type=str)
     parser.add_argument('-e', '--extensions', help='list of extensions', nargs='+')
     parser.add_argument('-p', '--python', help='Global python3 path', default=sys.executable)
 
@@ -33,16 +33,13 @@ def create_venv(global_python_path):
         print('Virtualenvironment creation failed: {}'.format(process.stdout))
 
 
-def create_example_app(app_name, app_type):
+def create_example_app(app_name, app_type=None):
     directory_name = pkg_resources.get_distribution('flask-now').location
-    if app_type == 'bp':
-        src = '{}/flask_now/templates/blueprints'.format(directory_name)
-    if app_type == 'simple':
-        src = '{}/flask_now/templates/simple'.format(directory_name)
+    boilerplate_code = {"bp":f'{directory_name}/flask_now/templates/blueprints',"simple":f'{directory_name}/flask_now/templates/simple'}
     try:
         if os.path.isdir(app_name):
             shutil.rmtree(app_name)
-        shutil.copytree(src, app_name)
+        shutil.copytree(boilerplate_code.get(app_type,'simple'), app_name)
         os.chdir(app_name)
     except Exception as ex:
         print(ex)

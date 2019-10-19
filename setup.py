@@ -7,7 +7,7 @@ def readme():
 
 
 setup(name='flask-now',
-      version='0.2.1',
+      version='0.2.2',
       description='Flask App Generator',
       long_description=readme(),
       classifiers=[
@@ -21,7 +21,7 @@ setup(name='flask-now',
           'Framework :: Flask',
           'Programming Language :: Python :: 3 :: Only',
       ],
-      keywords='extension flask flask-extension build-tool flask-build-tool flask_now flask-now app-generator flask-app-generator app generator',
+      keywords='extension flask flask-extension flask-build-tool flask_now flask-now app-generator flask-app-generator app generator',
       url='http://github.com/ozanonurtek/flask-now',
       author='Ozan Onur Tek',
       author_email='ozanonurtek@gmail.com',

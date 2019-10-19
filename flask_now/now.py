@@ -41,6 +41,12 @@ def create_example_app(app_name, app_type):
         src = '{}/flask_now/templates/simple'.format(directory_name)
     try:
         if os.path.isdir(app_name):
+            are_you_sure = input(
+                'Application named {} already exists. Flask-Now will recreate all files, do you want to continue?(y/n)'.format(
+                    app_name))
+            if are_you_sure != 'y' and are_you_sure != 'Y':
+                print('Flask-Now stopped due to given answer: {}'.format(are_you_sure))
+                sys.exit(0)
             shutil.rmtree(app_name)
         shutil.copytree(src, app_name)
         os.chdir(app_name)

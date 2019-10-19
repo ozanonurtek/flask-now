@@ -93,6 +93,21 @@ To uninstall :
 - Adding more options for configuration file.
 - Adding smart code generation according to desired extensions.(for example if you install Flask-SqlAlchemy, sample model, imports and db configurations will be ready)
 
+
+## RoadMap
+- Generate architecture for rest api's via using [Flask-RESTPlus](https://flask-restplus.readthedocs.io/en/stable/) planned version: 0.3.0. New architectural pattern :+1:
+- Adding flask-admin via using [Flask-Admin](https://flask-admin.readthedocs.io/en/latest/) planned version: 0.4.0. New architectural pattern :+1:
+- Decide if application will be renamed as flask-up, maybe both will be used while calling from console. [Naming proposal](https://github.com/ozanonurtek/flask-now/issues/5) which is started under [this reddit post](https://www.reddit.com/r/flask/comments/ddtprp/flasknow_flask_app_generator_v021/). Not planned yet.
+
+## ChangeLog
+
+- 0.2.1 project recreated.
+- 0.2.2 
+    - Thanks to [this issue](https://github.com/ozanonurtek/flask-now/pull/6) which is created by [c-w](https://github.com/c-w), flask-now perfectly works on Windows. :clap:
+    - RoadMap and ChangeLog added.
+    - Minor addition: flask-now waits for confirmation to create your project if given project name exists as folder. 
+
+
 ## Contribution
 
 Please feel free to contribute to this project, open issues, fork it, send pull requests.
